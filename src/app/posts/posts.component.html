@@ -1,0 +1,9 @@
+<button [routerLink]="['/posts/add/post']">Add Post</button>
+
+
+<router-outlet></router-outlet>
+<ul>
+    <li *ngFor="let post of posts$ | async">
+        <a [routerLink]='["/posts/add/post"]'>{{post.title}}</a>
+    </li>
+</ul>
