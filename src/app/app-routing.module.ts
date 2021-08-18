@@ -11,11 +11,14 @@ const routes: Routes = [{
   children:[{
     path:'add/post',
     component:AddPostComponent
+  },{
+    path:'edit/post/:id',
+    component:AddPostComponent
   }]
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation:'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

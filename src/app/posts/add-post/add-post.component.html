@@ -1,5 +1,5 @@
 <form [formGroup]="postFormGroup" (ngSubmit)="addPost()">
    <input type="text" formControlName="title">
    <input type="text" formControlName="description">
-<button type="submit">Save</button>
+<button type="submit">{{buttonLable}}</button>
 </form>

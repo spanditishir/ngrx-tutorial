@@ -4,6 +4,6 @@
 <router-outlet></router-outlet>
 <ul>
     <li *ngFor="let post of posts$ | async">
-        <a [routerLink]='["/posts/add/post"]'>{{post.title}}</a>
+        <a [routerLink]="['/posts/edit/post', post.id]" routerLinkActive="active">{{post.title}}</a>
     </li>
 </ul>
