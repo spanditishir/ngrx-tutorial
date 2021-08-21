@@ -1,24 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CounterComponent } from './counter/counter.component';
-import { AddPostComponent } from './posts/add-post/add-post.component';
-import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [{
-  path:'counter', component:CounterComponent
-},{
-  path:'posts', component:PostsComponent,
-  children:[{
-    path:'add/post',
-    component:AddPostComponent
-  },{
-    path:'edit/post/:id',
-    component:AddPostComponent
-  }]
-}];
+  path: 'counter', loadChildren: () => import('../app/counter/counter.module').then(m => m.CounterModule)
+},
+{
+  path: "posts",
+  loadChildren: () => import("../app/posts/posts.module").then(m => m.PostsModule)
+}
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation:'reload'})],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
