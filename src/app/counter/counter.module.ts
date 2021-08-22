@@ -8,6 +8,7 @@ import { CounterOutputComponent } from "./counter-output/counter-output.componen
 import { CounterComponent } from "./counter.component";
 import { CustomCounterComponent } from "./custom-counter/custom-counter.component";
 import { counterReducer } from "./store/counter.reducer";
+import { COUNTER_STATE_NAME } from "./store/counter.selector";
 
 const routes: Routes = [{
     path: '',
@@ -15,6 +16,6 @@ const routes: Routes = [{
 }];
 @NgModule({
     declarations: [CounterComponent, CounterButtonComponent, CounterOutputComponent, CustomCounterComponent],
-    imports: [CommonModule, FormsModule, RouterModule.forChild(routes), StoreModule.forFeature("nikhil", counterReducer)],
+    imports: [CommonModule, FormsModule, RouterModule.forChild(routes), StoreModule.forFeature(COUNTER_STATE_NAME, counterReducer)],
 })
 export class CounterModule { }

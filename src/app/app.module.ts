@@ -6,7 +6,9 @@ import { StoreModule } from "@ngrx/store";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from "../environments/environment"
+import { environment } from "../environments/environment";
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,11 @@ import { environment } from "../environments/environment"
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     //StoreModule.forRoot(AppReducer),
+    EffectsModule.forRoot([]),
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

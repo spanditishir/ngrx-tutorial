@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <form [formGroup]="loginForm" action="" class="col-md-4" (ngSubmit)="login()">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" formControlName="username" placeholder="username"
+                aria-describedby="basic-addon2">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" formControlName="password" placeholder="password"
+                aria-describedby="basic-addon2">
+        </div>
+        <div class="input-group mb-3">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+    <div class="col-md-4">
+
+    </div>
+</div>

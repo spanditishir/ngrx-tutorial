@@ -6,6 +6,7 @@ import { StoreModule } from "@ngrx/store";
 import { AddPostComponent } from '../posts/add-post/add-post.component';
 import { PostsComponent } from '../posts/posts.component';
 import { PostReducer } from "./store/posts.reducer";
+import { POST_STATE_NAME } from "./store/posts.selector";
 
 const routes: Routes = [
     {
@@ -24,6 +25,6 @@ const routes: Routes = [
 ]
 @NgModule({
     declarations: [AddPostComponent, PostsComponent],
-    imports: [RouterModule.forChild(routes), CommonModule, ReactiveFormsModule, StoreModule.forFeature("post", PostReducer)]
+    imports: [RouterModule.forChild(routes), CommonModule, ReactiveFormsModule, StoreModule.forFeature(POST_STATE_NAME, PostReducer)]
 })
 export class PostsModule { }
